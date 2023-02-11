@@ -1,7 +1,7 @@
 import { useState } from "react";
 export default function Usuario(props){
     //Feito baseado no DrivenFlix
-    const fotoInicial = "assets/img/catanacomics.svg"
+    const fotoInicial = "assets/img/profiles/catanacomics.svg"
     const [nomeDoUsuario, setNomeDoUsuario] = useState("catanacomics");
     const [foto, setFoto] = useState(fotoInicial)
     
