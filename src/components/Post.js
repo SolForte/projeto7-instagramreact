@@ -1,5 +1,7 @@
+import { useState } from "react"
 export default function Post(props){
     const postAlt=("postagem de "+props.postUserName)
+    const [bookmarkState, setBookmarkState] = useState("bookmark-outline") 
     return(
         <div className="post">
         <div className="topo">
@@ -24,7 +26,12 @@ export default function Post(props){
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
+              <ion-icon name={bookmarkState} onClick={() => {
+                if (bookmarkState !== "bookmark-outline"){
+                  setBookmarkState("bookmark-outline")}
+                else setBookmarkState("bookmark");
+              }}
+              ></ion-icon>
             </div>
           </div>
 
