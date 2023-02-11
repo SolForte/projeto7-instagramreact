@@ -300,13 +300,41 @@ ion-icon {
   visibility: visible;
 }
 
-ion-icon.akai-haato{
-  color: red;
-}
-
 .usuario ion-icon {
   margin-left: 5px;
   padding-top: 5px;
   color: black;
 }
 
+.conteudo{
+  position: relative;
+}
+
+.akai-haato{
+  color: red;
+}
+
+.dokidoki{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 250px;
+  animation-name: haatothrob;
+  animation-duration: 0.3s;
+}
+
+@keyframes haatothrob{
+  from {
+    font-size: 50px;
+  }
+  to {
+    font-size: 250px;
+  }
+}
+
+.hidden{
+  display: none;
+}

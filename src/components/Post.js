@@ -5,6 +5,7 @@ export default function Post(props){
     const [likes, setLikes] = useState(props.likes)
     const [likeHeartState, setLikeHeartState] = useState("heart-outline")
     const [heartClass, setHeartClass] = useState("")
+    const [haachama, setHaachama] = useState("hidden")
 
     function likeFunction(){
       if (likeHeartState !== "heart"){
@@ -32,7 +33,18 @@ export default function Post(props){
         </div>
 
         <div className="conteudo">
-          <img src={props.postImage} alt={postAlt} />
+          <img src={props.postImage} alt={postAlt} onDoubleClick={
+            ()=>{
+              if (likeHeartState !== "heart"){
+                setLikeHeartState("heart")
+                setHeartClass("akai-haato")
+                setLikes(likes + 1);
+                setHaachama("dokidoki");
+                setTimeout(() => {setHaachama("hidden")}, 500);
+              }
+            }
+          }/>
+          <ion-icon name="heart" class={haachama}></ion-icon>
         </div>
 
         <div className="fundo">
@@ -57,7 +69,7 @@ export default function Post(props){
           <div className="curtidas">
             <img src="assets/img/adorable_animals.svg" alt="adorable_animals"/>
             <div className="texto">
-              Curtido por <strong>NOME</strong> e <strong>outras {likes} pessoas</strong>
+              Curtido por <strong>adorable_animals</strong> e <strong>outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
