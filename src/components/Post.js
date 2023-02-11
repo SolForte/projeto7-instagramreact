@@ -79,7 +79,7 @@ export default function Post(props) {
         </div>
 
         <div className="curtidas">
-          <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
+          <img src="assets/img/profiles/adorable_animals.svg" alt="adorable_animals" />
           <div className="texto">
             Curtido por <strong>adorable_animals</strong> e{" "}
             <strong data-test="likes-number">outras {likes} pessoas</strong>

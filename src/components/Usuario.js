@@ -30,7 +30,7 @@ export default function Usuario(props){
         if (!/\S/.test(novaFoto) || novaFoto===null || novaFoto.length===0){
           return
         }
-        else if (url == novaFoto){
+        else if (url === novaFoto){
           setFoto(novaFoto)
         }  
     }

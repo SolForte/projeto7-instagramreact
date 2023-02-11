@@ -4,7 +4,7 @@ const postData = [
   {
     userName: "barked",
     userProfilePicture: "assets/img/profiles/barked.svg",
-    postImage: "assets/img/dog.svg",
+    postImage: "assets/img/posts/dog.svg",
     likeNumber: 2,
   },
   {
