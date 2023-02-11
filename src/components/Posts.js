@@ -2,9 +2,9 @@ import Post from "./Post";
 
 const postData = [
   {
-    userName: "barked",
-    userProfilePicture: "assets/img/profiles/barked.svg",
-    postImage: "assets/img/posts/dog.svg",
+    userName: "meowed",
+    userProfilePicture: "assets/img/profiles/meowed.svg",
+    postImage: "assets/img/posts/gato-telefone.svg",
     likeNumber: 2,
   },
   {
@@ -14,9 +14,9 @@ const postData = [
     likeNumber: 3,
   },
   {
-    userName: "barked",
-    userProfilePicture: "assets/img/profiles/barked.svg",
-    postImage: "assets/img/posts/dog.svg",
+    userName: "smallcutecats",
+    userProfilePicture: "assets/img/profiles/smallcutecats.svg",
+    postImage: "assets/img/posts/smolcat.jpg",
     likeNumber: 4,
   },
 ];
