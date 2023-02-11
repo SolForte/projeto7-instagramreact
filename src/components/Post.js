@@ -21,7 +21,7 @@ export default function Post(props){
     }
 
     return(
-        <div className="post">
+        <div data-test="post" className="post">
         <div className="topo">
           <div className="usuario">
             <img src={props.postUserProfilePicture} alt={props.postUserName}/>
@@ -33,7 +33,7 @@ export default function Post(props){
         </div>
 
         <div className="conteudo">
-          <img src={props.postImage} alt={postAlt} onDoubleClick={
+          <img data-test="post-image" src={props.postImage} alt={postAlt} onDoubleClick={
             ()=>{
               if (likeHeartState !== "heart"){
                 setLikeHeartState("heart")
@@ -50,12 +50,12 @@ export default function Post(props){
         <div className="fundo">
           <div className="acoes">
             <div>
-              <ion-icon name={likeHeartState} class={heartClass} onClick={likeFunction}></ion-icon>
+              <ion-icon data-test="like-post" name={likeHeartState} class={heartClass} onClick={likeFunction}></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-              <ion-icon name={bookmarkState} onClick={() => {
+              <ion-icon data-test="save-post" name={bookmarkState} onClick={() => {
                 if (bookmarkState !== "bookmark-outline"){
                   setBookmarkState("bookmark-outline")}
                 else {
@@ -69,7 +69,7 @@ export default function Post(props){
           <div className="curtidas">
             <img src="assets/img/adorable_animals.svg" alt="adorable_animals"/>
             <div className="texto">
-              Curtido por <strong>adorable_animals</strong> e <strong>outras {likes} pessoas</strong>
+              Curtido por <strong>adorable_animals</strong> e <strong data-test="likes-number">outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
