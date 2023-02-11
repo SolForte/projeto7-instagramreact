@@ -10,7 +10,7 @@ export default function Usuario(){
             //Nome de usuario no Instagram não pode ter espaços.
             //Usa-se outros caracteres como ponto ou underline no lugar de espaços
             //Logo, validação de dados.
-        if (!/\S/.test(novoNome) || !/^\s+$/.test(novoNome) || novoNome===null || novoNome.length===0){
+        if (/\s/.test(novoNome) || novoNome===null || novoNome.length===0){
             return
         } else {
             //Nome de usuario no Instagram é em LowerCase
