@@ -1,6 +1,5 @@
 import { useState } from "react";
 export default function Post(props) {
-
   //Correção de Code Smells: Define a constant instead of duplicating string literals.
 
   const bookmarkIconOutline = "bookmark-outline";
