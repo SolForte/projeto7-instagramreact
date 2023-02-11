@@ -4,17 +4,20 @@ const postData = [
   {
     userName: "barked",
     userProfilePicture: "assets/img/barked.svg",
-    postImage: "assets/img/dog.svg"
+    postImage: "assets/img/dog.svg",
+    likeNumber: 2
   },
   {
     userName: "barked",
     userProfilePicture: "assets/img/barked.svg",
-    postImage: "assets/img/dog.svg"
+    postImage: "assets/img/dog.svg",
+    likeNumber: 3
   },
   {
     userName: "barked",
     userProfilePicture: "assets/img/barked.svg",
-    postImage: "assets/img/dog.svg"
+    postImage: "assets/img/dog.svg",
+    likeNumber: 4
   }
 ]
 export default function Posts(){
@@ -25,6 +28,7 @@ export default function Posts(){
           postUserName={array.userName}
           postUserProfilePicture={array.userProfilePicture}
           postImage={array.postImage}
+          likes={array.likeNumber}
           key={index}/>
         ))}
         </div>

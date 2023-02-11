@@ -2,9 +2,23 @@ import { useState } from "react"
 export default function Post(props){
     const postAlt=("postagem de "+props.postUserName)
     const [bookmarkState, setBookmarkState] = useState("bookmark-outline")
-    const [likes, setLikes] = useState(Number(2))
+    const [likes, setLikes] = useState(props.likes)
     const [likeHeartState, setLikeHeartState] = useState("heart-outline")
     const [heartClass, setHeartClass] = useState("")
+
+    function likeFunction(){
+      if (likeHeartState !== "heart"){
+        setLikeHeartState("heart")
+        setHeartClass("akai-haato")
+        setLikes(likes + 1);
+      }
+      else {
+        setLikeHeartState("heart-outline")
+        setHeartClass("")
+        setLikes(likes - 1);
+      }
+    }
+
     return(
         <div className="post">
         <div className="topo">
@@ -24,18 +38,7 @@ export default function Post(props){
         <div className="fundo">
           <div className="acoes">
             <div>
-              <ion-icon name={likeHeartState} class={heartClass} onClick={
-                ()=>{
-                  if (likeHeartState !== "heart"){
-                    setLikeHeartState("heart")
-                    setHeartClass("akai-haato")
-                  }
-                  else {
-                    setLikeHeartState("heart-outline")
-                    setHeartClass("")
-                  }
-                }
-              }></ion-icon>
+              <ion-icon name={likeHeartState} class={heartClass} onClick={likeFunction}></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
