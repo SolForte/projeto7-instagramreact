@@ -7,10 +7,14 @@ export default function Usuario(){
     
     function trocaNomeDoUsuario() {
         const novoNome = prompt("Qual é o seu nome?")
-        if (!/\S/.test(novoNome) || novoNome===null || novoNome.length===0){
+            //Nome de usuario no Instagram não pode ter espaços.
+            //Usa-se outros caracteres como ponto ou underline no lugar de espaços
+            //Logo, validação de dados.
+        if (!/\S/.test(novoNome) || !/^\s+$/.test(novoNome) || novoNome===null || novoNome.length===0){
             return
         } else {
             //Nome de usuario no Instagram é em LowerCase
+            //Logo, conversão.
             setNomeDoUsuario(novoNome.toLowerCase())
         }
     }
@@ -23,11 +27,13 @@ export default function Usuario(){
         } catch (_) {
           return false;
         }
+        //Apesar de desnecessário.
+        //A fim de atender requisitos de projeto, primeiro verifica-se se é vazio.
         if (!/\S/.test(novaFoto) || novaFoto===null || novaFoto.length===0){
           return
         }
         else if (url == novaFoto){
-            setFoto(novaFoto)
+          setFoto(novaFoto)
         }  
     }
 

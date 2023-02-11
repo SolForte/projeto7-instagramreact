@@ -1,5 +1,5 @@
 import Story from "./Story"
-export default function Stories() {
+
 	const itens = [
         {name: "9gag", img: "assets/img/9gag.svg"},
         {name: "meowed", img: "assets/img/meowed.svg"},
@@ -10,7 +10,7 @@ export default function Stories() {
         {name: "filomoderna", img: "assets/img/filomoderna.svg"},
         {name: "memeriagourmet", img: "assets/img/memeriagourmet.svg"}
     ]
-
+export default function Stories() {
 	return (
         <div className="stories">
 
