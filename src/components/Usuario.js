@@ -10,7 +10,8 @@ export default function Usuario(){
         if (!/\S/.test(novoNome) || novoNome===null || novoNome.length===0){
             return
         } else {
-            setNomeDoUsuario(novoNome)
+            //Nome de usuario no Instagram é em LowerCase
+            setNomeDoUsuario(novoNome.toLowerCase())
         }
     }
 
@@ -22,7 +23,10 @@ export default function Usuario(){
         } catch (_) {
           return false;
         }
-        if (url == novaFoto){
+        if (!/\S/.test(novaFoto) || novaFoto===null || novaFoto.length===0){
+          return
+        }
+        else if (url == novaFoto){
             setFoto(novaFoto)
         }  
     }
