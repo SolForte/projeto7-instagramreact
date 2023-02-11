@@ -1,20 +1,29 @@
 import { useState } from "react";
 export default function Post(props) {
+
+  //Correção de Code Smells: Define a constant instead of duplicating string literals.
+
+  const bookmarkIconOutline = "bookmark-outline"
+  const heartIconOutline = "heart-outline"
+  const emptyString = ""
+  const hiddenClass = "hidden"
+  const filledHeartState = "heart"
+
   const postAlt = "postagem de " + props.postUserName;
-  const [bookmarkState, setBookmarkState] = useState("bookmark-outline");
+  const [bookmarkState, setBookmarkState] = useState(bookmarkIconOutline);
   const [likes, setLikes] = useState(props.likes);
-  const [likeHeartState, setLikeHeartState] = useState("heart-outline");
-  const [heartClass, setHeartClass] = useState("");
-  const [haachama, setHaachama] = useState("hidden");
+  const [likeHeartState, setLikeHeartState] = useState(heartIconOutline);
+  const [heartClass, setHeartClass] = useState(emptyString);
+  const [haachama, setHaachama] = useState(hiddenClass);
 
   function likeFunction() {
-    if (likeHeartState !== "heart") {
-      setLikeHeartState("heart");
+    if (likeHeartState !== filledHeartState) {
+      setLikeHeartState(filledHeartState);
       setHeartClass("akai-haato");
       setLikes(likes + 1);
     } else {
-      setLikeHeartState("heart-outline");
-      setHeartClass("");
+      setLikeHeartState(heartIconOutline);
+      setHeartClass(emptyString);
       setLikes(likes - 1);
     }
   }
@@ -68,8 +77,8 @@ export default function Post(props) {
               data-test="save-post"
               name={bookmarkState}
               onClick={() => {
-                if (bookmarkState !== "bookmark-outline") {
-                  setBookmarkState("bookmark-outline");
+                if (bookmarkState !== bookmarkIconOutline) {
+                  setBookmarkState(bookmarkIconOutline);
                 } else {
                   setBookmarkState("bookmark");
                 }

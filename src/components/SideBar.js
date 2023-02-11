@@ -10,13 +10,13 @@ export default function SideBar() {
     if (novoNome.length !== 0) {
         setNomeDoUsuario(novoNome);
     };
-  };
+  }
   const trocarFoto=()=>{
       const novaFoto = prompt("Insira o link da sua nova foto");
       if (novaFoto.length !== 0) {
         setFoto(novaFoto);
     };
-  };
+  }
   return (
     <div className="sidebar">
       <Usuario nomeDoUsuario={nomeDoUsuario} foto={foto} trocarFoto={trocarFoto} trocaNomeDoUsuario={trocaNomeDoUsuario}/>
