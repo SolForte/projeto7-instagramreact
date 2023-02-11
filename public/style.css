@@ -300,6 +300,10 @@ ion-icon {
   visibility: visible;
 }
 
+ion-icon.akai-haato{
+  color: red;
+}
+
 .usuario ion-icon {
   margin-left: 5px;
   padding-top: 5px;

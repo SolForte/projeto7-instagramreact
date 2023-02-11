@@ -1,7 +1,10 @@
 import { useState } from "react"
 export default function Post(props){
     const postAlt=("postagem de "+props.postUserName)
-    const [bookmarkState, setBookmarkState] = useState("bookmark-outline") 
+    const [bookmarkState, setBookmarkState] = useState("bookmark-outline")
+    const [likes, setLikes] = useState(Number(2))
+    const [likeHeartState, setLikeHeartState] = useState("heart-outline")
+    const [heartClass, setHeartClass] = useState("")
     return(
         <div className="post">
         <div className="topo">
@@ -21,7 +24,18 @@ export default function Post(props){
         <div className="fundo">
           <div className="acoes">
             <div>
-              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon name={likeHeartState} class={heartClass} onClick={
+                ()=>{
+                  if (likeHeartState !== "heart"){
+                    setLikeHeartState("heart")
+                    setHeartClass("akai-haato")
+                  }
+                  else {
+                    setLikeHeartState("heart-outline")
+                    setHeartClass("")
+                  }
+                }
+              }></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
@@ -29,7 +43,9 @@ export default function Post(props){
               <ion-icon name={bookmarkState} onClick={() => {
                 if (bookmarkState !== "bookmark-outline"){
                   setBookmarkState("bookmark-outline")}
-                else setBookmarkState("bookmark");
+                else {
+                  setBookmarkState("bookmark")
+                }
               }}
               ></ion-icon>
             </div>
@@ -38,7 +54,7 @@ export default function Post(props){
           <div className="curtidas">
             <img src="assets/img/adorable_animals.svg" alt="adorable_animals"/>
             <div className="texto">
-              Curtido por <strong>NOME</strong> e <strong>outras X pessoas</strong>
+              Curtido por <strong>NOME</strong> e <strong>outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
