@@ -15,7 +15,7 @@ export default function SideBar() {
       const novaFoto = prompt("Insira o link da sua nova foto");
       if (novaFoto.length !== 0) {
         setFoto(novaFoto);
-    };
+    }
   }
   return (
     <div className="sidebar">

@@ -3,11 +3,11 @@ export default function Post(props) {
 
   //Correção de Code Smells: Define a constant instead of duplicating string literals.
 
-  const bookmarkIconOutline = "bookmark-outline"
-  const heartIconOutline = "heart-outline"
-  const emptyString = ""
-  const hiddenClass = "hidden"
-  const filledHeartState = "heart"
+  const bookmarkIconOutline = "bookmark-outline";
+  const heartIconOutline = "heart-outline";
+  const emptyString = "";
+  const hiddenClass = "hidden";
+  const filledHeartState = "heart";
 
   const postAlt = "postagem de " + props.postUserName;
   const [bookmarkState, setBookmarkState] = useState(bookmarkIconOutline);
