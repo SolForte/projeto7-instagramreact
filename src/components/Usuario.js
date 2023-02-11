@@ -7,30 +7,14 @@ export default function Usuario(props){
     
     function trocaNomeDoUsuario() {
         const novoNome = prompt("Qual é o seu nome?")
-            //Nome de usuario no Instagram não pode ter espaços.
-            //Usa-se outros caracteres como ponto ou underline no lugar de espaços
-            //Logo, validação de dados.
-        if (/\s/.test(novoNome) || novoNome===null || novoNome.length===0){
-            return
-        } else {
+        if (novoNome.length!==0){
             setNomeDoUsuario(novoNome)
         }
     }
 
     function trocarFoto() {
         const novaFoto = prompt("Insira o link da sua nova foto")
-        let url;
-        try {
-          url = new URL(novaFoto);
-        } catch (_) {
-          return false;
-        }
-        //Apesar de desnecessário.
-        //A fim de atender requisitos de projeto, primeiro verifica-se se é vazio.
-        if (!/\S/.test(novaFoto) || novaFoto===null || novaFoto.length===0){
-          return
-        }
-        else if (url === novaFoto){
+        if (novaFoto.length!==0){
           setFoto(novaFoto)
         }  
     }
